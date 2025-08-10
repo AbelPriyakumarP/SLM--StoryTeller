@@ -28,10 +28,10 @@ pip install transformers datasets torch accelerate numpy
 
 ## 🚀 Getting Started
 
-# Step 1: Data Processing and Serialization
+## Step 1: Data Processing and Serialization
 The ajibawa-2023/Children-Stories-Collection dataset is too large to load entirely into memory. The following script will tokenize the dataset and serialize it into an efficient binary format.
 
-# Script to download, tokenize, and serialize the dataset
+## Script to download, tokenize, and serialize the dataset
 python scripts/prepare_data.py
 Output: This process saves the tokenized dataset to the ./processed_stories_dataset directory in a memory-mapped format, ready for training.
 
