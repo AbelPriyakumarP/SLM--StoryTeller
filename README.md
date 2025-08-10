@@ -35,15 +35,15 @@ The ajibawa-2023/Children-Stories-Collection dataset is too large to load entire
 python scripts/prepare_data.py
 Output: This process saves the tokenized dataset to the ./processed_stories_dataset directory in a memory-mapped format, ready for training.
 
-# Step 2: Fine-Tuning the SLM
+## Step 2: Fine-Tuning the SLM
 The model is fine-tuned using the pre-processed data. The style tokens are automatically added to the tokenizer's vocabulary during initialization.
 
-# Script to train the model on the preprocessed data
+## Script to train the model on the preprocessed data
 python scripts/train_slm.py
 Output: The fine-tuned model and tokenizer will be saved to the ./story-generator-final directory.
 ---
 
-# 🤖 Usage: Generating Stylized Stories
+## 🤖 Usage: Generating Stylized Stories
 Once the model is trained, you can easily generate stories using the specialized pipeline.
 
 Load the Generator Pipeline
@@ -56,5 +56,5 @@ generator = pipeline(
 )
 ---
 
-# 🤝 Contribution
+## 🤝 Contribution
 We welcome contributions! If you have suggestions for new style tokens, model architectures, or performance optimizations, please open an issue or submit a pull request.
