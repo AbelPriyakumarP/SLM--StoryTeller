@@ -1,4 +1,4 @@
-# 📚 SLM Stylized Story Generator: Controlled Narrative Generation for Children's Literature
+## 📚 SLM Stylized Story Generator: Controlled Narrative Generation for Children's Literature
 ---
 
 ## Project Overview
@@ -26,19 +26,18 @@ This project requires a Python environment (3.9+) and the following libraries. Y
 pip install transformers datasets torch accelerate numpy
 ```
 
-#🚀 Getting Started
+## 🚀 Getting Started
 
 # Step 1: Data Processing and Serialization
 The ajibawa-2023/Children-Stories-Collection dataset is too large to load entirely into memory. The following script will tokenize the dataset and serialize it into an efficient binary format.
-code
-Bash
+
 # Script to download, tokenize, and serialize the dataset
 python scripts/prepare_data.py
 Output: This process saves the tokenized dataset to the ./processed_stories_dataset directory in a memory-mapped format, ready for training.
+
 # Step 2: Fine-Tuning the SLM
 The model is fine-tuned using the pre-processed data. The style tokens are automatically added to the tokenizer's vocabulary during initialization.
-code
-Bash
+
 # Script to train the model on the preprocessed data
 python scripts/train_slm.py
 Output: The fine-tuned model and tokenizer will be saved to the ./story-generator-final directory.
@@ -46,9 +45,8 @@ Output: The fine-tuned model and tokenizer will be saved to the ./story-generato
 
 # 🤖 Usage: Generating Stylized Stories
 Once the model is trained, you can easily generate stories using the specialized pipeline.
+
 Load the Generator Pipeline
-code
-Python
 from transformers import pipeline
 
 generator = pipeline(
@@ -56,20 +54,6 @@ generator = pipeline(
     model='./story-generator-final', 
     tokenizer='./story-generator-final'
 )
----
-
-# Example 2: Generate a Story with a Twist
-
-prompt_twist = "[TWIST] The brave knight went on a quest to save the sleeping dragon, but when he reached the cave..."
-
-output = generator(
-    prompt_twist, 
-    max_length=200, 
-    num_return_sequences=1, 
-    do_sample=True, 
-    top_p=0.9
-)
-print(output['generated_text'])
 ---
 
 # 🤝 Contribution
